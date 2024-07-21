@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom"
+import { AuthProvider, useAuth } from "./services/AuthContext"
+import Login from "./components/Login"
+import TodoList from "./components/Todo/TodoList"
+import { TodoProvider } from "./services/TodoContext"
+
+const PrivateRoute = ({ element }) => {
+  const { isAuthenticated } = useAuth()
+  return isAuthenticated() ? element : <Navigate to="/login" />
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <AuthProvider>
+      <TodoProvider>
+        <Router>
+          <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route path="/" element={<PrivateRoute element={<TodoList />} />} />
+          </Routes>
+        </Router>
+      </TodoProvider>
+    </AuthProvider>
+  )
 }
 
-export default App;
+export default App

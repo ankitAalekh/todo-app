@@ -1,0 +1,42 @@
+/* TodoItem.css */
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 50%;
+  }
+  
+  .todo-item img {
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+  }
+  
+  .task-text {
+    margin-left: 10px;
+    flex-grow: 1;
+    cursor: pointer;
+  }
+  
+  .todo-item button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  .todo-item button:disabled {
+    margin-left: 10px;
+    padding: 5px 10px;
+    cursor: default;
+  }
+  
+  .todo-item input[type="text"] {
+    margin-left: 10px;
+    padding: 5px;
+    flex-grow: 1;
+  }
+  
+  .completed .task-text {
+    text-decoration: line-through;
+  }
+  

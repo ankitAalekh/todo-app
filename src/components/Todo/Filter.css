@@ -1,0 +1,42 @@
+/* components/Filter.css */
+
+.filters-container {
+    margin: 20px 0;
+    text-align: center;
+  }
+  
+  .filters-container button {
+    margin: 0 5px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    color: black;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .filters-container button.active {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .filtered-todos {
+    margin-top: 20px;
+  }
+  
+  .filtered-todos div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    background-color: rgb(197, 192, 192);
+    justify-content: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  
+  .filtered-todos img {
+    margin-right: 10px;
+    border-radius: 5px;
+  }
+  
