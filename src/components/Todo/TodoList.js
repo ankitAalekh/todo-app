@@ -18,9 +18,6 @@ const TodoList = () => {
 
   return (
     <div className="todolist-container">
-      {/* <div className="todolist-header">
-        <button onClick={logout}>Logout</button>
-      </div> */}
       <h1>Todo List</h1>
       <AddTodo />
       <div className="todo-items">

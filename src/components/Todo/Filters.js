@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { useTodos } from "../../services/TodoContext"
-import "./Filter.css" // Import the CSS file
+import "./Filter.css"
 
 const Filters = () => {
   const { todos } = useTodos()

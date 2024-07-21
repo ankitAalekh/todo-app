@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react"
 import { useTodos } from "../../services/TodoContext"
-import "./AddTodo.css" // Import the CSS file
+import "./AddTodo.css"
 
 const AddTodo = () => {
   const { addTodo } = useTodos()
@@ -13,7 +13,7 @@ const AddTodo = () => {
     addTodo(task, image)
     setTask("")
     setImage(null)
-    fileInputRef.current.value = "" // Reset the file input field
+    fileInputRef.current.value = ""
   }
 
   const handleImageChange = (e) => {
@@ -30,13 +30,7 @@ const AddTodo = () => {
   return (
     <form className="add-todo-form" onSubmit={handleSubmit}>
       <input className="task-input" type="text" value={task} onChange={(e) => setTask(e.target.value)} placeholder="New task" required />
-      <input
-        className="file-input"
-        type="file"
-        accept="image/*"
-        onChange={handleImageChange}
-        ref={fileInputRef} // Attach the ref to the file input field
-      />
+      <input className="file-input" type="file" accept="image/*" onChange={handleImageChange} ref={fileInputRef} />
       <button className="add-button" type="submit">
         Add Task
       </button>

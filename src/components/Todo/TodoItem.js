@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { useTodos } from "../../services/TodoContext"
-import "./TodoItem.css" // Import the CSS file for TodoItem
+import "./TodoItem.css"
 
 const TodoItem = ({ todo }) => {
   const { toggleComplete, deleteTodo, editTodo } = useTodos()
